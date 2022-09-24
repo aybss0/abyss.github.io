@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Abyss</title>
+        <title>物理学杂记——最小作用原理 | Abyss</title>
         <meta name="author" content="abyss">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -129,24 +129,23 @@
                         
 <div class="article">
     <div>
-        <h1> </h1>
+        <h1>物理学杂记——最小作用原理 </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2022/9/22
+            2022/9/24
         </span>
         
         
     </div>
     <div class="content" v-pre>
-        <h2 id="训练十轮后首张mask"><a href="#训练十轮后首张mask" class="headerlink" title="训练十轮后首张mask"></a>训练十轮后首张mask</h2><p><img src="https://img-blog.csdnimg.cn/faedf46759ce4793b0f3413bfb16a79b.png" alt="在这里插入图片描述"></p>
-<h2 id="训练损失和准确率"><a href="#训练损失和准确率" class="headerlink" title="训练损失和准确率"></a>训练损失和准确率</h2><p><img src="https://img-blog.csdnimg.cn/efb48568d8f6497b93f46fb761b7a287.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/00724830a6d245cc815fed0d6b7bcdb4.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/74f046125e054d5d857036a7a096ddec.png" alt="在这里插入图片描述"><br>以每个轮次的平均损失和准确率绘图，从轮次上看起伏并不是很大</p>
-<h2 id="一些输入输出的仿真"><a href="#一些输入输出的仿真" class="headerlink" title="一些输入输出的仿真"></a>一些输入输出的仿真</h2><p><img src="https://img-blog.csdnimg.cn/3b1a4d969b5240a6a006b5bca2f7edc1.png" alt="输入为6"></p>
-<p><img src="https://img-blog.csdnimg.cn/70691369391e4ffe96250118990f8155.png" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/2f744d814a8346b684868b80551b5b93.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/66fbde97c29c4cee8c09fab5e50ce112.png" alt="在这里插入图片描述"></p>
+        <span id="more"></span>
+<h2 id="什么是最小作用原理？"><a href="#什么是最小作用原理？" class="headerlink" title="什么是最小作用原理？"></a>什么是最小作用原理？</h2><p><font size=4>我们生活中时常能观察到露珠和悬链线，但是它们为什么是那样的形态呢？<br><img src="https://img-blog.csdnimg.cn/e427dfec8d874213bf0db87e2ec80652.png#pic_center" alt="叶片上的露珠">![呈悬链线状的铁链](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/74529ea36fbb454db993242667a6d2cf.png#pic_center">https://img-blog.csdnimg.cn/74529ea36fbb454db993242667a6d2cf.png#pic_center</a> &#x3D;400x)<br>还有光为什么总是走最短的路径呢？（光实际是走了所有路径，后面会在量子电动力学笔记中介绍）<br>其实，这都是因为<strong>最小作用原理</strong>：<strong>客体的实际运动可以由作用量求极值得出，是其中作用量最小的那个。</strong><br>露珠所呈现的椭圆体，其实是表面势能与重力势能和最小的情况（太空中水滴呈球体也是因为球体表面势能最小），而悬链线这一形状是其重力势能最低的形状（也就是重心最低的形态）。<br>现在不妨先看看费马对于光走最短路径的解释。就是那位“我确信已发现 一种美妙的证法，可惜这里空白的地方太小，写不下”的费马先生，业余数学家之王。<br><strong>费马原理</strong>的描述是这样的：<strong>光线沿其实际路径从一个点到另一个点的传播时间相对于该路径的微小变化是平稳的</strong>。只能说不愧是费马，随便一句话就很容易让人误解，实际上可以这样描述：<strong>过两个定点的光总会走光程的一阶变分为零的路径</strong>。在泛函中，函数是自变量，一阶变分之于泛函就如同一阶微分之于自变量，微分是自变量的改变量，而变分是函数的改变量（具体的我也不懂，暂不展开，先让泛函变分之流见鬼去吧）。光程的一阶变分为零，那不正是求极值嘛。</p>
+<h2 id="朗道——《力学》的表述"><a href="#朗道——《力学》的表述" class="headerlink" title="朗道——《力学》的表述"></a>朗道——《力学》的表述</h2><p><font size=4>力学系统运动规律的最一般表述由最小作用量原理（Stationary Action Principle）（或者<strong>哈密顿原理</strong>）给出。根据这一原理，每个力学系统都可以用一个确定的函数$L(q,\dot{q},t)$表征，并且系统的运动还要满足下面的条件：假设在时刻$t_{1}$和$t_{2}$系统的位置由两组坐标$q$和$\dot{q}$确定，那么，系统在这两个位置之间的运动使得积分<br>$$ S &#x3D; \int_{t_{1}}^{t_{2}}{L(q,\dot{q},t)}dt$$取最小值$L$为给定系统的拉格朗日量，S为作用量。<br>现在，以此推一下牛顿第一定律，先回顾一下牛顿第一定律：任何物体在不受外力的作用下都会保持匀速直线运动或静止状态。静止状态自然对应一种能量的最小值，那么匀速直线运动状态呢？<br>考虑光滑水平面上两个固定的点，给定初速度使一物体从一点到另外一点，在时间一定的条件下，匀速运动对应的能量随时间的积分是最小的。设初速度$v_{0}$，过程中的速度为$v&#x3D;v_{0}+u$，整个过程时间为T，由于是匀速时间运动，故应当有$\int_{0}^{T}{v}dt&#x3D;\int_{0}^{T}{v_{0}+u}dt&#x3D;v_{0}T$，那么$\int_{0}^{T}{u}dt&#x3D;0$，由于$L&#x3D;\frac{1}{2}mv^2-V$,其中，V为势能，势能不变，故只考虑前面动量项取最小值的情况：$$\int_0^{T}{\frac{1}{2}mv^2}dt-\int_{0}^{T}\frac{1}{2}{mv_{0}^2dt}&#x3D;\int_{0}^{T}{\frac{1}{2}u^2}dt\geq0$$显然，如果$u\not&#x3D;0$作用量就会大于$v&#x3D;v_{0}$时，也即匀速运动确实是对应了能量的最小值的状态,符合最小作用原理。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/168781828">https://zhuanlan.zhihu.com/p/168781828</a><br>              <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/7603970">https://baike.baidu.com/item/%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86/7603970</a></p>
 
     </div>
     
